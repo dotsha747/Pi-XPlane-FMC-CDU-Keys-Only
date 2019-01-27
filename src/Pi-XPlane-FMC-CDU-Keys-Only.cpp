@@ -237,9 +237,9 @@ int main(int argc, char * argv[]) {
 
 						// look it up in our keysToCommands table
 
-						auto r = keyInfo.find(nowCol);
+						auto r = keyInfo.find(nowRow+1);
 						if ( r != keyInfo.end()) {
-							auto c = r->second.find (nowRow);
+							auto c = r->second.find (nowCol+1);
 							if (c != r->second.end()) {
 								printf ("  SENDING COMMAND \"%s\" to X-Plane", c->second.c_str());
 								xp.sendCommand(c->second);
