@@ -31,7 +31,7 @@ MAINSRCS=$(wildcard src/*.cpp)
 MAINOBJS=$(patsubst %.cpp, %.o, $(MAINSRCS))
 MAINLIBS=pthread wiringPi XPlaneUDPClient
 MAINLDOPTS=
-MAINEXE=Pi-XPlane-FMC-CDU-Keys-Only
+MAINEXE=piXPlaneFMCCDUKeysOnly
 
 world: all
 
@@ -48,6 +48,7 @@ all: $(MAINEXE)
 
 install: $(MAINEXE)
 	install -D $(MAINEXE) $(PREFIX)/bin/$(MAINEXE)
+	install root/etc/systemd/system/piXPlaneFMCCDUKeysOnly.service $(PREFIX)/etc/systemd/system/piXPlaneFMCCDUKeysOnly.service
 
 clean: 
 	rm -f $(MAINOBJS) $(MAINEXE)
