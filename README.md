@@ -1,5 +1,8 @@
 # Pi-XPlane-FMC-CDU-Keys-Only
 
+Note: If you're looking for software to use with the Zibo 737 or
+x737FMC, this is not it. See here: https://github.com/dotsha747/Pi-XPlane-FMC-CDU
+
 I was asked if I could add support for the standard X-Plane 737 FMC
 (not the Zibo mod). 
 
