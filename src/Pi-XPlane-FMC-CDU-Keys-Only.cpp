@@ -85,6 +85,8 @@ void receiverBeaconCallback(XPlaneBeaconListener::XPlaneServer server,
 
 int main(int argc, char * argv[]) {
 
+	// row col cmd
+
 	keyInfo[1][1] = "sim/FMS/ls_1l"; 	// sw-1
 	keyInfo[2][1] = "sim/FMS/ls_2l";	// sw-2
 	keyInfo[3][1] = "sim/FMS/ls_3l"; 	// sw-3
@@ -235,9 +237,9 @@ int main(int argc, char * argv[]) {
 
 						// look it up in our keysToCommands table
 
-						auto r = keyInfo.find(nowRow);
+						auto r = keyInfo.find(nowCol);
 						if ( r != keyInfo.end()) {
-							auto c = r->second.find (nowCol);
+							auto c = r->second.find (nowRow);
 							if (c != r->second.end()) {
 								printf ("  SENDING COMMAND \"%s\" to X-Plane", c->second.c_str());
 								xp.sendCommand(c->second);
