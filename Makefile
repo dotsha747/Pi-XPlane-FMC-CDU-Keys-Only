@@ -48,7 +48,7 @@ all: $(MAINEXE)
 
 install: $(MAINEXE)
 	install -D $(MAINEXE) $(PREFIX)/bin/$(MAINEXE)
-	install root/etc/systemd/system/piXPlaneFMCCDUKeysOnly.service $(PREFIX)/etc/systemd/system/piXPlaneFMCCDUKeysOnly.service
+	install -D root/etc/systemd/system/piXPlaneFMCCDUKeysOnly.service $(DESTDIR)/etc/systemd/system/piXPlaneFMCCDUKeysOnly.service
 
 clean: 
 	rm -f $(MAINOBJS) $(MAINEXE)
